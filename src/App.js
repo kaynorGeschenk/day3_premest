@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 
-export default function App() {
+function App() {
+  const [firstName, setFirstName] = useState("");
+
+  function handleChange(e) {
+    setFirstName(e.target.value);
+  }
+
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+    <div>
+      <input className="firstName" onChange={handleChange} />
+      <h1>{firstName}</h1>
     </div>
   );
 }
+export default App;
